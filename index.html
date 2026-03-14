@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Animated Menu Bar</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
+body{
+height:100vh;
+background:linear-gradient(120deg,#1f1c2c,#928dab);
+}
+
+/* Navbar */
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 60px;
+background:rgba(0,0,0,0.5);
+backdrop-filter:blur(10px);
+}
+
+/* Logo */
+
+.logo{
+color:white;
+font-size:26px;
+font-weight:bold;
+letter-spacing:2px;
+}
+
+/* Menu */
+
+.menu{
+list-style:none;
+display:flex;
+gap:30px;
+}
+
+.menu a{
+text-decoration:none;
+color:white;
+font-size:18px;
+position:relative;
+padding:5px 0;
+transition:0.3s;
+}
+
+/* Underline animation */
+
+.menu a::after{
+content:"";
+position:absolute;
+width:0%;
+height:3px;
+background:#00f2fe;
+left:0;
+bottom:-5px;
+transition:0.4s;
+}
+
+.menu a:hover::after{
+width:100%;
+}
+
+.menu a:hover{
+color:#00f2fe;
+}
+
+/* Page Content */
+
+.content{
+text-align:center;
+color:white;
+margin-top:150px;
+}
+
+.content h1{
+font-size:50px;
+margin-bottom:20px;
+}
+
+.content p{
+font-size:20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+<div class="logo">MyWebsite</div>
+
+<ul class="menu">
+<li><a href="DynamicMenu/home.html">Home</a></li>
+<li><a href="DynamicMenu/about.html">About</a></li>
+<li><a href="DynamicMenu/services.html">Services</a></li>
+<li><a href="DynamicMenu/portfolio.html">Portfolio</a></li>
+<li><a href="DynamicMenu/contact.html">Contact</a></li>
+</ul>
+</nav>
+
+<div class="content">
+<h1>Welcome</h1>
+<p>Animated Navigation Bar Example</p>
+</div>
+
+</body>
+</html>
+
