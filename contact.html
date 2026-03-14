@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Contact Us</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+
+body{
+background:linear-gradient(120deg,#0f2027,#203a43,#2c5364);
+color:white;
+animation:pageFade 1s ease;
+}
+
+/* Page Fade Animation */
+
+@keyframes pageFade{
+from{
+opacity:0;
+}
+to{
+opacity:1;
+}
+}
+
+/* Navbar */
+
+.navbar{
+background:#000;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 25px;
+position:relative;
+}
+
+.logo{
+font-size:22px;
+color:#00f2fe;
+font-weight:bold;
+}
+
+/* Menu */
+
+.menu{
+display:flex;
+gap:20px;
+}
+
+.menu a{
+color:white;
+text-decoration:none;
+font-size:18px;
+position:relative;
+transition:0.3s;
+}
+
+/* underline animation */
+
+.menu a::after{
+content:'';
+position:absolute;
+width:0%;
+height:2px;
+background:#00ffff;
+left:0;
+bottom:-5px;
+transition:0.3s;
+}
+
+.menu a:hover::after{
+width:100%;
+}
+
+.menu a:hover{
+color:#00ffff;
+}
+
+.menu-icon{
+font-size:26px;
+cursor:pointer;
+display:none;
+color:white;
+}
+
+/* Container */
+
+.container{
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:85vh;
+padding:20px;
+}
+
+/* Contact Card */
+
+.contact-card{
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(10px);
+padding:40px;
+border-radius:12px;
+width:340px;
+box-shadow:0 10px 25px rgba(0,0,0,0.4);
+animation:fadeUp 0.8s ease;
+transition:0.4s;
+}
+
+.contact-card:hover{
+transform:translateY(-5px);
+box-shadow:0 0 25px #00ffff;
+}
+
+/* Heading */
+
+.contact-card h2{
+text-align:center;
+margin-bottom:20px;
+}
+
+/* Inputs */
+
+input,textarea{
+width:100%;
+padding:12px;
+margin:10px 0;
+border:none;
+border-radius:6px;
+outline:none;
+background:rgba(255,255,255,0.15);
+color:white;
+transition:0.3s;
+}
+
+input::placeholder,
+textarea::placeholder{
+color:#ddd;
+}
+
+input:focus,
+textarea:focus{
+background:rgba(255,255,255,0.25);
+box-shadow:0 0 8px #00ffff;
+}
+
+/* Button */
+
+button{
+width:100%;
+padding:12px;
+background:linear-gradient(45deg,#00ffff,#00cccc);
+border:none;
+border-radius:6px;
+font-size:16px;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+box-shadow:0 0 10px #00ffff;
+}
+
+/* Animation */
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.menu{
+display:none;
+flex-direction:column;
+position:absolute;
+top:60px;
+left:0;
+width:100%;
+background:#000;
+text-align:center;
+z-index:1000;
+}
+
+.menu a{
+display:block;
+padding:12px;
+border-bottom:1px solid #333;
+}
+
+.menu.active{
+display:flex;
+}
+
+.menu-icon{
+display:block;
+}
+
+.contact-card{
+width:100%;
+max-width:350px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- Navbar -->
+
+<div class="navbar">
+
+<div class="logo">My Website</div>
+
+<div class="menu" id="menu">
+<a href="home.html">Home</a>
+<a href="about.html">About</a>
+<a href="services.html">Services</a>
+<a href="portfolio.html">Portfolio</a>
+<a href="contact.html">Contact</a>
+</div>
+
+<div class="menu-icon" onclick="toggleMenu()">
+<i class="fas fa-bars"></i>
+</div>
+
+</div>
+
+<!-- Contact Section -->
+
+<div class="container">
+
+<div class="contact-card">
+
+<h2>Contact Us</h2>
+
+<form>
+
+<input type="text" placeholder="Your Name" required>
+
+<input type="email" placeholder="Your Email" required>
+
+<textarea rows="4" placeholder="Your Message"></textarea>
+
+<button type="submit">Send Message</button>
+
+</form>
+
+</div>
+
+</div>
+
+<script>
+
+function toggleMenu(){
+document.getElementById("menu").classList.toggle("active");
+}
+
+</script>
+
+</body>
+</html>

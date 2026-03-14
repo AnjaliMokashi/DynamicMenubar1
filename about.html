@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Arial;
+background:#111;
+color:white;
+}
+
+/* Navbar */
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 30px;
+
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(10px);
+
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+/* Logo */
+
+.logo{
+font-size:22px;
+font-weight:bold;
+color:#00f2fe;
+
+animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+
+from{ text-shadow:0 0 5px #00f2fe; }
+to{ text-shadow:0 0 20px #00f2fe; }
+
+}
+
+/* Menu */
+
+.nav-links{
+display:flex;
+}
+
+.nav-links a{
+color:white;
+text-decoration:none;
+margin:0 15px;
+font-size:18px;
+position:relative;
+transition:0.3s;
+}
+
+/* hover animation */
+
+.nav-links a::after{
+content:'';
+position:absolute;
+width:0%;
+height:2px;
+background:#00f2fe;
+left:0;
+bottom:-6px;
+transition:0.3s;
+}
+
+.nav-links a:hover{
+color:#00f2fe;
+}
+
+.nav-links a:hover::after{
+width:100%;
+}
+
+/* Menu icon */
+
+.menu-icon{
+display:none;
+font-size:28px;
+cursor:pointer;
+}
+
+/* Container */
+
+.container{
+display:flex;
+align-items:center;
+justify-content:center;
+flex-wrap:wrap;
+
+min-height:85vh;
+
+gap:40px;
+padding:40px;
+
+animation:fadeUp 1.5s;
+}
+
+/* fade animation */
+
+@keyframes fadeUp{
+
+from{
+opacity:0;
+transform:translateY(40px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+/* Image */
+
+.container img{
+width:100%;
+max-width:420px;
+border-radius:12px;
+transition:0.5s;
+}
+
+/* zoom hover */
+
+.container img:hover{
+transform:scale(1.05);
+box-shadow:0 0 20px #00f2fe;
+}
+
+/* Text */
+
+.text{
+max-width:500px;
+}
+
+.text h1{
+margin-bottom:20px;
+font-size:38px;
+}
+
+.text p{
+font-size:18px;
+line-height:1.6;
+margin-bottom:20px;
+}
+
+/* Button */
+
+.btn{
+padding:10px 25px;
+border:none;
+border-radius:25px;
+
+background:linear-gradient(45deg,#00f2fe,#4facfe);
+
+color:white;
+font-size:16px;
+
+cursor:pointer;
+transition:0.4s;
+}
+
+.btn:hover{
+transform:scale(1.1);
+box-shadow:0 0 15px #00f2fe;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.nav-links{
+display:none;
+flex-direction:column;
+
+background:#000;
+
+position:absolute;
+top:60px;
+left:0;
+width:100%;
+
+text-align:center;
+}
+
+.nav-links a{
+padding:15px;
+display:block;
+border-top:1px solid #333;
+}
+
+.nav-links.show{
+display:flex;
+}
+
+.menu-icon{
+display:block;
+}
+
+.text h1{
+font-size:30px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+
+<div class="logo">My Website</div>
+
+<div class="menu-icon" onclick="toggleMenu()">
+☰
+</div>
+
+<div class="nav-links" id="menu">
+
+<a href="home.html">Home</a>
+<a href="about.html">About</a>
+<a href="services.html">Services</a>
+<a href="portfolio.html">Portfolio</a>
+<a href="contact.html">Contact</a>
+
+</div>
+
+</div>
+
+<div class="container">
+
+<img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f">
+
+<div class="text">
+
+<h1>About Us</h1>
+
+<p>
+We are a creative team working on web development and design.
+Our goal is to create beautiful, responsive and modern websites
+for users across all devices.
+</p>
+
+<button class="btn">Learn More</button>
+
+</div>
+
+</div>
+
+<script>
+
+function toggleMenu(){
+document.getElementById("menu").classList.toggle("show");
+}
+
+</script>
+
+</body>
+</html>
